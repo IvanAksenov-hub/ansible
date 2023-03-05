@@ -24,7 +24,8 @@
 ## 192.168.1.110
 
 [test]
-192.168.1.103
+#192.168.1.103
+node1    ansible_host=ec2-52-2-139-226.compute-1.amazonaws.com   ansible_user=ec2-user
 
 # If you have multiple hosts following a pattern you can specify
 # them like this:
