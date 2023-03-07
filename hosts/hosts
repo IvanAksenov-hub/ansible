@@ -23,13 +23,13 @@
 ## 192.168.1.100
 ## 192.168.1.110
 
-[test]
-#192.168.1.103
-name = node1    ansible_host = ec2-52-2-139-226.compute-1.amazonaws.com   ansible_user=ec2-user
-name = node2    ansible_host = ec2-18-212-170-49.compute-1.amazonaws.com   ansible_user=ec2-user
-name = node3    ansible_host = ec2-34-205-140-84.compute-1.amazonaws.com   ansible_user=ec2-user
+[nodes_k8s_cluster]
+node1    ansible_host = ec2-52-2-139-226.compute-1.amazonaws.com
+node2    ansible_host = ec2-18-212-170-49.compute-1.amazonaws.com
+node3    ansible_host = ec2-34-205-140-84.compute-1.amazonaws.com
 
-
+[nodes_k8s_cluster:vars]
+ansible_user=ec2-user
 
 # If you have multiple hosts following a pattern you can specify
 # them like this:
