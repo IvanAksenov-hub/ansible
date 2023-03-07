@@ -23,14 +23,20 @@
 ## 192.168.1.100
 ## 192.168.1.110
 
-[nodes_k8s_cluster]
+[master]
 52.2.139.226
 18.212.170.49
 34.205.140.84
+
+[worker]
 44.204.36.55
 184.73.108.75
 
-[nodes_k8s_cluster:vars]
+[k8s_cluster:children]
+master
+worker
+
+[k8s_cluster:vars]
 ansible_user=ec2-user
 
 # If you have multiple hosts following a pattern you can specify
