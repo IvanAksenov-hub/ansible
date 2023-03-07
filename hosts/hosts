@@ -24,9 +24,9 @@
 ## 192.168.1.110
 
 [nodes_k8s_cluster]
-node1    ansible_host = ec2-52-2-139-226.compute-1.amazonaws.com
-node2    ansible_host = ec2-18-212-170-49.compute-1.amazonaws.com
-node3    ansible_host = ec2-34-205-140-84.compute-1.amazonaws.com
+52.2.139.226
+18.212.170.49
+34.205.140.84
 
 [nodes_k8s_cluster:vars]
 ansible_user=ec2-user
