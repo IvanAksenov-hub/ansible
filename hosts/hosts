@@ -39,6 +39,12 @@ worker
 [k8s_cluster:vars]
 ansible_user=ec2-user
 
+[postgre]
+192.168.1.101
+
+[postgre:vars]
+ansible_user=admin
+
 # If you have multiple hosts following a pattern you can specify
 # them like this:
 
