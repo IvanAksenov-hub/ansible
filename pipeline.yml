@@ -1,0 +1,6 @@
+---
+- name: prepare BD
+  hosts: postgre
+  roles:
+    - install_postgreSQL
+    - createDB_userDB
