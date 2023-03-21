@@ -12,9 +12,3 @@
 
 - name: Enable service
   command: "systemctl enable postgresql-12"
-
-- name: Create DB user
-  command: "psql postgres && CREATE ROLE admin LOGIN PASSWORD 'admin';"
-
-- name: Create DB
-  command: "psql postgres && CREATE DATABASE python WITH OWNER = admin"
