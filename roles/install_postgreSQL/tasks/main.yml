@@ -1,5 +1,5 @@
 - name: Add PostgreSQL repository
-  ansible.builtin.yum-repository:
+  yum-repository:
     name: postgresql{{ pg_version }}-server
     description: posrgresql{{ pg_version}}
     baseurl: https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
@@ -8,7 +8,7 @@
     validate_certs: "no"
 
 - name: Install PostgreSQL
-  ansible.builtin.yum: 
+  yum: 
     name: postgresql{{ pg_version }}-server
     state: latest
 
