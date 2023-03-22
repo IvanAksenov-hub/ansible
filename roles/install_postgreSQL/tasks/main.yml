@@ -1,12 +1,16 @@
 - name: Add PostgreSQL repository
-  yum-repository:
+  ansible.builtin.yum-repository:
     name: postgresql{{ pg_version }}-server
     description: posrgresql{{ pg_version}}
     baseurl: https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+    enabled: "yes"
+    gpgcheck: "no"
+    validate_certs: "no"
 
 - name: Install PostgreSQL
-  yum: name=postgresql{{ pg_version }}-server
-  state: latest
+  ansible.builtin.yum: 
+    name: postgresql{{ pg_version }}-server
+    state: latest
 
 - name: InitDB
   command: "/usr/pgsql-12/bin/postgresql-12-setup initdb"
