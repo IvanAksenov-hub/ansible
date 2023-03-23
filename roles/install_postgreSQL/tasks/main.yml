@@ -19,10 +19,10 @@
   become: true
 
 - name: InitDB
-  command: "/usr/pgsql-12/bin/postgresql-12-setup initdb"
+  command: "sudo /usr/pgsql-12/bin/postgresql-12-setup initdb"
 
 - name: Start service
-  command: "systemctl start postgresql-12"
+  command: "sudo systemctl start postgresql-12"
 
 - name: Enable service
-  command: "systemctl enable postgresql-12"
+  command: "sudo systemctl enable postgresql-12"
