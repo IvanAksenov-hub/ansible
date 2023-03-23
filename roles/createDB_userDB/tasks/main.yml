@@ -1,5 +1,9 @@
 - name: Create DB user
   command: "psql postgres && CREATE ROLE admin LOGIN PASSWORD 'admin';"
+  become: true
+  become_user: postgres
 
 - name: Create DB
   command: "psql postgres && CREATE DATABASE python WITH OWNER = admin"
+  become: true
+  become_user: postgres
