@@ -15,6 +15,7 @@
   yum: 
     name: postgresql{{ pg_version }}-server
     state: latest
+  become: true
 
 - name: InitDB
   command: "/usr/pgsql-12/bin/postgresql-12-setup initdb"
