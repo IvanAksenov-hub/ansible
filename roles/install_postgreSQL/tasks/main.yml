@@ -1,11 +1,11 @@
-- name: Add PostgreSQL repository
-  yum-repository:
-    name: postgresql{{ pg_version }}-server
-    description: posrgresql{{ pg_version}}
-    baseurl: https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-    enabled: "yes"
-    gpgcheck: "no"
-    validate_certs: "no"
+#- name: Add PostgreSQL repository
+#  yum-repository:
+#    name: postgresql{{ pg_version }}-server
+#    description: posrgresql{{ pg_version}}
+#    baseurl: https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+#    enabled: "yes"
+#    gpgcheck: "no"
+#    validate_certs: "no"
 
 - name: Install PostgreSQL
   yum: 
