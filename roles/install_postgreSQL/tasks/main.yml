@@ -9,7 +9,7 @@
 - name: Add PostgreSQL repo
   command: "sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm"
   register: result
-  failed_when: "'Nothing to do' in result.stdout and result.rc != 0"
+  failed_when: "'Nothing to do' not in result.stdout and result.rc != 0"
   args:
     warn: false
   #ignore_errors: true
@@ -23,7 +23,7 @@
 - name: InitDB
   command: "/usr/pgsql-12/bin/postgresql-12-setup initdb"
   register: result_init
-  failed_when: "'Data directory is not empty' in result_init.stdout and result_init.rc != 0"
+  failed_when: "'Data directory is not empty' not in result_init.stdout and result_init.rc != 0"
   become: true
 
 - name: Start service
