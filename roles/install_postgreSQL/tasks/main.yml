@@ -8,9 +8,11 @@
 #    validate_certs: "no"
 - name: Add PostgreSQL repo
   command: "sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm"
+  register: result
+  failed_when: result.rc != "Nothing to do" and result.rc != 0
   args:
     warn: false
-  ignore_errors: true
+  #ignore_errors: true
 
 - name: Install PostgreSQL
   yum: 
