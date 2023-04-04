@@ -8,7 +8,7 @@
 #    validate_certs: "no"
 - name: install python
   become: true
-  raw: yum -y install python
+  raw: yum -y install python3
   register: result
   failed_when: 
   - not result.stderr is search('Nothing to do')
