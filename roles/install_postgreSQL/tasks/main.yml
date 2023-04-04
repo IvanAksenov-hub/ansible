@@ -7,6 +7,7 @@
 #    gpgcheck: "no"
 #    validate_certs: "no"
 - name: install python
+  become: true
   raw: yum -y install python
   register: result
   failed_when: 
@@ -14,7 +15,8 @@
   - result.rc != 0
 
 - name: Add PostgreSQL repo
-  command: "sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm"
+  become: true
+  command: "yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm"
   register: result
   failed_when: 
   - not result.stderr is search('Nothing to do')
