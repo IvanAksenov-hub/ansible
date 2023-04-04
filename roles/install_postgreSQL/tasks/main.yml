@@ -10,7 +10,7 @@
   command: "sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm"
   register: result
   failed_when: 
-  - not result.stderr | search('Nothing to do')
+  - not result.stderr is search('Nothing to do')
   - result.rc != 0
   #ignore_errors: true
 
