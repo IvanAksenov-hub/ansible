@@ -9,9 +9,7 @@
 - name: Add PostgreSQL repo
   command: "sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm"
   register: result
-  failed_when: "'Nothing to do' not in result.stdout and result.rc != 0"
-  args:
-    warn: false
+  failed_when: "'Nothing to do' not in result.stdout[0]" #and result.rc != 0"
   #ignore_errors: true
 
 - name: Install PostgreSQL
