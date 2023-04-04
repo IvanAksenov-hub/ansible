@@ -8,6 +8,7 @@
 #    validate_certs: "no"
 - name: install python
   raw: yum -y install python
+  register: result
   failed_when: 
   - not result.stderr is search('Nothing to do')
   - result.rc != 0
