@@ -46,7 +46,7 @@ ansible_user=ec2-user
 ansible_user=admin
 db_name=python
 db_user=admin
-db_password+admin
+db_password=admin
 
 # If you have multiple hosts following a pattern you can specify
 # them like this:
