@@ -44,7 +44,7 @@ ansible_user=ec2-user
 
 [postgre:vars]
 ansible_user=admin
-db_name=python
+db_name=project1
 db_user=admin
 db_password=admin
 
