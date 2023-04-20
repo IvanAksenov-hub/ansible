@@ -24,29 +24,30 @@
 ## 192.168.1.110
 
 [master]
-52.2.139.226
-18.212.170.49
-34.205.140.84
+192.168.1.121
 
 [worker]
-44.204.36.55
-184.73.108.75
+## 192.168.1.122
+192.168.1.123
 
 [k8s_cluster:children]
 master
 worker
 
 [k8s_cluster:vars]
-ansible_user=ec2-user
+ansible_user=admin
 
 [postgre]
 192.168.1.101
 
 [postgre:vars]
 ansible_user=admin
-db_name=project1
+db_name=work
 db_user=admin
 db_password=admin
+
+[monitoring]
+192.168.1.150
 
 # If you have multiple hosts following a pattern you can specify
 # them like this:
