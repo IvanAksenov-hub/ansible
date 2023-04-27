@@ -24,11 +24,11 @@
 ## 192.168.1.110
 
 [master]
-192.168.1.121
+192.168.100.121
 
 [worker]
-## 192.168.1.122
-192.168.1.123
+## 192.168.100.122
+192.168.100.123
 
 [k8s_cluster:children]
 master
@@ -38,7 +38,7 @@ worker
 ansible_user=admin
 
 [postgre]
-192.168.1.101
+192.168.100.101
 
 [postgre:vars]
 ansible_user=admin
@@ -47,7 +47,7 @@ db_user=admin
 db_password=admin
 
 [monitoring]
-192.168.1.150
+192.168.100.150
 
 # If you have multiple hosts following a pattern you can specify
 # them like this:
